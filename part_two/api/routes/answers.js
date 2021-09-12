@@ -29,11 +29,9 @@ router.get("/all_answers/:surveyId", async (_, res) => {
 
 router.get("/all_answers/:surveyId", async (req, res) => {
   try {
-    console.log(req.params.surveyId);
     const oneSurvey = await retrieveSingleSurvey(req.params.surveyId);
     return res.status(200).send(oneSurvey);
   } catch (err) {
-    console.log("error here?");
     return res.status(500).send({ error: err.message });
   }
 });

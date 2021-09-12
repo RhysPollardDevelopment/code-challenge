@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "c019bb84-ac3d-49ef-bc96-15295f7fcf56",
+		"name": "Code-Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Survey",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test\",\r\n    \"questions\": [\r\n        {\r\n            \"question_text\": \"Are you right handed?\",\r\n            \"type\": \"boolean\"\r\n        },\r\n        {\r\n            \"question_text\": \"WHat is your name?\",\r\n            \"type\": \"string\"\r\n        },\r\n        {\r\n            \"question_text\": \"How old are you?\",\r\n            \"type\": \"number\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/surveys/new_survey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"surveys",
+						"new_survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Surveys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/surveys/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"surveys",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Load Survey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/api/surveys/load/613e39d7c51cae762c3d297c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"surveys",
+						"load",
+						"613e39d7c51cae762c3d297c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Answers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surveyId\": \"613e3bc56dcdfd9d25fd2aac\",\r\n    \"answers\": [\r\n        {\r\n            \"questionId\": \"613e3bc56dcdfd9d25fd2aad\",\r\n            \"answer\": true\r\n        },\r\n                {\r\n            \"questionId\": \"613e3bc56dcdfd9d25fd2aae\",\r\n            \"answer\": \"Rhys\"\r\n        },\r\n                {\r\n            \"questionId\": \"613e3bc56dcdfd9d25fd2aaf\",\r\n            \"answer\": 30\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5002/api/surveys/post_answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"surveys",
+						"post_answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Answers for Survey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5002/api/surveys/all_answers/613e3bc56dcdfd9d25fd2aac",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5002",
+					"path": [
+						"api",
+						"surveys",
+						"all_answers",
+						"613e3bc56dcdfd9d25fd2aac"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
