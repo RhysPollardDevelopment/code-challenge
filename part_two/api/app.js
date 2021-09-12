@@ -21,5 +21,6 @@ app.get("/test", (_, res) => res.status(200).send("Hello world"));
 // Routes
 app.use("/api/users", require("./routes/users"));
 app.use("/api/surveys", require("./routes/surveys"));
+// app.use("/api/answers", require("./routes/answers"));
 
 module.exports = app;

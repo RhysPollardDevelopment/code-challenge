@@ -16,7 +16,7 @@ const SurveySchema = new Schema(
         },
         type: {
           type: String,
-          enum: ["Number", "String", "Boolean"],
+          enum: ["number", "string", "boolean"],
           default: "String",
         },
       },

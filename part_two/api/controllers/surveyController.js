@@ -19,13 +19,13 @@ const retrieveAllSurveys = async () => {
   }
 };
 
-const retrieveOneSurvey = async () => {
+const retrieveSingleSurvey = async (surveyId) => {
   try {
-    const survey = await Survey.find({});
-    return survey;
+    const oneSurvey = await Survey.findById(surveyId).exec();
+    return oneSurvey;
   } catch (err) {
     throw new Error(err);
   }
 };
 
-module.exports = { postNewSurvey, retrieveAllSurveys };
+module.exports = { postNewSurvey, retrieveAllSurveys, retrieveSingleSurvey };
